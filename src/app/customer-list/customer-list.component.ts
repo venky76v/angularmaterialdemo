@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Customer } from '../customer';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatPaginator, MatSort, MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-customer-list',
@@ -6,10 +8,57 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
+  loading = true;
+  customers: Customer[] = [
+    { id: 1, name: 'Customer 001', job: 'Programmer' },
+    { id: 2, name: 'Customer 002', job: 'Programmer'},
+    { id: 3, name: 'Customer 003', job: 'Programmer'},
+    { id: 4, name: 'Customer 004', job: 'Programmer'},
+    { id: 5, name: 'Customer 005', job: 'Programmer'},
+    { id: 6, name: 'Customer 006', job: 'Programmer'},
+    { id: 7, name: 'Customer 007', job: 'Programmer'},
+    { id: 8, name: 'Customer 008', job: 'Programmer'},
+    { id: 9, name: 'Customer 009', job: 'Programmer'},
+    { id: 10, name: 'Customer 010', job: 'Programmer'},
+    { id: 11, name: 'Customer 011', job: 'Programmer'},
+    { id: 12, name: 'Customer 012', job: 'Programmer'},
+    { id: 13, name: 'Customer 013', job: 'Programmer'},
+    { id: 14, name: 'Customer 014', job: 'Programmer'},
+    { id: 15, name: 'Customer 015', job: 'Programmer'},
+    { id: 16, name: 'Customer 016', job: 'Programmer'},
+    { id: 17, name: 'Customer 017', job: 'Programmer'},
+    { id: 18, name: 'Customer 018', job: 'Programmer'},
+    { id: 19, name: 'Customer 019', job: 'Programmer'},
+    { id: 20, name: 'Customer 020', job: 'Programmer'},
+  ];
 
-  constructor() { }
+  dataSource = new MatTableDataSource<Customer>(this.customers);
+  displayedColumns = ['id', 'name', 'job', 'operations'];
+  pageSize = 4;
 
-  ngOnInit() {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(public snackBar: MatSnackBar) { }
+
+  deleteCustomer(id) {
+    let snackBarRef = this.snackBar.open(`Deleting customer #${id}`);
   }
 
+  editCustomer(id) {
+    let snackBarRef = this.snackBar.open(`Editing customer #${id}`);
+  }
+
+  ngAfterViewInit() {
+    // Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    // Add 'implements AfterViewInit' to the class.
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
+  }
 }

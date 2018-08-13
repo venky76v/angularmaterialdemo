@@ -1,0 +1,56 @@
+<mat-card class="login-card">
+  <mat-card-header>
+    <mat-card-title>Star Wars</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Favorite Starwars character" value="Starwar Character" [(ngModel)]="characterName">
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="getCharacterDetails()" mat-raised-button color="accent">Get Character Details</button>
+  </mat-card-actions>
+</mat-card>
+
+<div *ngIf="people">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>
+        Name : {{ people.name }} <br>
+        Gender : {{people.gender}} <br>
+        Skin Color : {{people.skin_color}} <br>
+        Height : {{ people.height }} <br>
+        Weight : {{ people.mass }} <br>
+        Hair Color : {{ people.hair_color }} <br>
+        Home World : <button mat-button (click)="openDialog()">{{ people.homeworld }}</button>
+      </mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- <p *ngFor="let filmDetail of starWarFilms">{{filmDetail.title}}</p> -->
+      <mat-card>
+        <mat-list role="list" *ngFor="let filmDetail of starWarFilms">
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+              Episode Name : {{ filmDetail.title }}
+          </mat-list-item>
+          <mat-list-item role="listitem">
+              Director : {{ filmDetail.director }}
+          </mat-list-item>
+          <mat-list-item role="listitem">
+              Episode : {{ filmDetail.episode_id }}
+          </mat-list-item>
+          <mat-list-item role="listitem">
+             Date Released {{ filmDetail.created }}
+          </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+      </mat-card>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,8 @@
+.example-card {
+  max-width: 100%;
+}
+
+.example-header-image {
+  background-image: url('https://png.icons8.com/color/1600/star-wars.png');
+  background-size: cover;
+}

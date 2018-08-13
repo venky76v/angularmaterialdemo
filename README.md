@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Angularmaterialdemo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# angularmaterialdemo
+Sample Tutorial to learn all about Angular Material
+>>>>>>> 4c9ec074682a4936de7625fd8da9272fdd8b2c90
