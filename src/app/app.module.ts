@@ -14,7 +14,7 @@ import { Browser } from 'protractor';
 import { MyMaterialModule } from './material.module';
 import { ErrorComponent } from './error.component';
 import { StarwarsComponent } from './starwars/starwars.component';
-import { PlanetDataComponent } from './planet-data/planet-data.component';
+import { PlanetNameDialogComponent } from './planet-name-dialog/planet-name-dialog.component';
 
 const appRoutes: Routes = [
   { path: 'customer-list', component: CustomerListComponent },
@@ -32,7 +32,7 @@ const appRoutes: Routes = [
     CustomerCreateComponent,
     ErrorComponent,
     StarwarsComponent,
-    PlanetDataComponent
+    PlanetNameDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule
   ],
-  entryComponents: [ErrorComponent],
+  entryComponents: [ErrorComponent, PlanetNameDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

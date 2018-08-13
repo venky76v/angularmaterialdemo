@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlanetDataComponent } from './planet-data.component';
+import { PlanetNameDialogComponent } from './planet-name-dialog.component';
 
-describe('PlanetDataComponent', () => {
-  let component: PlanetDataComponent;
-  let fixture: ComponentFixture<PlanetDataComponent>;
+describe('PlanetNameDialogComponent', () => {
+  let component: PlanetNameDialogComponent;
+  let fixture: ComponentFixture<PlanetNameDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlanetDataComponent ]
+      declarations: [ PlanetNameDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PlanetDataComponent);
+    fixture = TestBed.createComponent(PlanetNameDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

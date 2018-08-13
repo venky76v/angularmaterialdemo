@@ -23,7 +23,7 @@
         Height : {{ people.height }} <br>
         Weight : {{ people.mass }} <br>
         Hair Color : {{ people.hair_color }} <br>
-        Home World : <button mat-button (click)="openDialog()">{{ people.homeworld }}</button>
+        Home World : <button mat-button (click)="openDialog(people.homeworld)">Click to find details of home planet</button>
       </mat-card-title>
       <mat-card-subtitle></mat-card-subtitle>
     </mat-card-header>

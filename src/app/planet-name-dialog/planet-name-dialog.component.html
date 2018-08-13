@@ -1,0 +1,22 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title *ngIf="planetData">Name : {{planetData.name}}</mat-card-title>
+    </mat-card-header>
+  <mat-card-content>
+      <div *ngIf="planetData">
+          <mat-list role="list">
+              <mat-list-item role="listitem">Rotational Period : {{planetData.rotation_period}}</mat-list-item>
+              <mat-list-item role="listitem">Orbital Period : {{planetData.orbital_period}}</mat-list-item>
+              <mat-list-item role="listitem">Diameter : {{planetData.diameter}}</mat-list-item>
+              <mat-list-item role="listitem">Climate : {{planetData.climate}}</mat-list-item>
+              <mat-list-item role="listitem">Gravity : {{planetData.gravity}}</mat-list-item>
+              <mat-list-item role="listitem">Population : {{planetData.population}}</mat-list-item>
+            </mat-list>
+      </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
